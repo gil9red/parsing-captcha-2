@@ -183,11 +183,15 @@ class CaptchaParser:
         self.mask_letter = {}
 
         for file in os.listdir('letters'):
-            if '.png' in file:
-                file = file.replace('.png', '')
-                letter, mask = file.split('_')
-                self.letter_mask[letter] = mask
-                self.mask_letter[mask] = letter
+            try:
+                if '.png' in file:
+                    name = file.replace('.png', '')
+                    letter, mask = name.split('_')
+                    self.letter_mask[letter] = mask
+                    self.mask_letter[mask] = letter
+
+            except ValueError as e:
+                print('Обнаружен файл, имеющий нестандартное имя: {}, ошибка: {}'.format(file, e))
 
         all_letters = string.ascii_letters + string.digits
         for letter in self.letter_mask.keys():
