@@ -175,6 +175,10 @@ import os
 import string
 
 
+# Папка с образцами букв капчи
+LETTER_DIR = 'letters'
+
+
 class CaptchaParser:
     """Класс для парсинга капчи"""
 
@@ -182,7 +186,7 @@ class CaptchaParser:
         self.letter_mask = {}
         self.mask_letter = {}
 
-        for file in os.listdir('letters'):
+        for file in os.listdir(LETTER_DIR):
             try:
                 if '.png' in file:
                     name = file.replace('.png', '')
@@ -197,7 +201,8 @@ class CaptchaParser:
         for letter in self.letter_mask.keys():
             all_letters = all_letters.replace(letter, '')
 
-        print('Не хватает {} букв: {}\n'.format(len(all_letters), list(all_letters)))
+        if all_letters:
+            print('Не хватает {} букв: {}\n'.format(len(all_letters), list(all_letters)))
 
     def run(self, file):
         """Функция принимает путь к файлу капчи, парсит ее и возвращает распарсенную строку с текстом капчи."""
@@ -215,16 +220,21 @@ class CaptchaParser:
 
         captcha_text = ''
 
+        found_new_digit = set([file.replace('.png', '') for file in os.listdir(LETTER_DIR)])
+
         for im_letter in letters_captcha:
             # Получаем маску буквы капчи
             mask = get_hash_mask_letter(im_letter)
             letter = self.mask_letter.get(mask)
 
             if letter is None:
-                full_file = 'letters/' + mask + '.png'
-                print('Найдена новая буква mask={}, file={}. Сохраняю ее в {}. '
-                      'Не забудь ее опознать!'.format(mask, file, full_file))
-                im_letter.save(full_file)
+                if mask not in found_new_digit:
+                    full_file = os.path.join(LETTER_DIR, mask + '.png')
+                    print('Найдена новая буква mask={}, file={}. Сохраняю ее в {}. '
+                          'Не забудь ее опознать!'.format(mask, file, full_file))
+                    im_letter.save(full_file)
+
+                    found_new_digit.add(mask)
 
                 captcha_text += '-'
             else:
