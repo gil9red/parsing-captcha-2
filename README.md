@@ -12,7 +12,7 @@ parsing-captcha-2
 Алгоритм такой же как и в [parsing_captcha](https://github.com/gil9red/parsing_captcha), но 100% точный из-за того, что капчи этого репозитория всегда имеют просветы между буквами.
 
 
-##### Лог работы: #####
+#### Лог работы:
 ```
 C:\Python34\pythonw.exe C:/Users/ipetrash/Desktop/PyScripts/parsing-captcha-2/main.py
 Не хватает 7 букв: ['l', 'o', 's', 'I', 'O', '0', '1']
@@ -30,3 +30,17 @@ C:\Python34\pythonw.exe C:/Users/ipetrash/Desktop/PyScripts/parsing-captcha-2/ma
 
 Process finished with exit code 0
 ```
+
+#### Пример работы парсера:
+Файл         | Капча | Результат парсинга
+------------ | ------------ | ------------
+[examples/1.png](examples/1.png) | ![examples/1.png](examples/1.png) | eG9WU
+[examples/2.png](examples/2.png) | ![examples/2.png](examples/2.png) | R6Vze
+[examples/3.png](examples/3.png) | ![examples/3.png](examples/3.png) | q5iBN
+[examples/4.png](examples/4.png) | ![examples/4.png](examples/4.png) | Mp2j8
+[examples/5.png](examples/5.png) | ![examples/5.png](examples/5.png) | a7dyt
+[examples/6.png](examples/6.png) | ![examples/6.png](examples/6.png) | mXdk9
+[examples/7.png](examples/7.png) | ![examples/7.png](examples/7.png) | 9wViW
+[examples/8.png](examples/8.png) | ![examples/8.png](examples/8.png) | vSpRE
+[examples/9.png](examples/9.png) | ![examples/9.png](examples/9.png) | EJX9r
+[examples/10.png](examples/10.png) | ![examples/10.png](examples/10.png) | CtkB7
