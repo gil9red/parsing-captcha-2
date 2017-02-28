@@ -21,5 +21,5 @@ if __name__ == '__main__':
     files = sorted(glob('examples/*.png'), key=num_im)
 
     for file_name in files:
-        phone = parser.run(file_name)
-        print('"{}" -- {}'.format(phone, file_name))
+        captcha_text = parser.run(file_name)
+        print('"{}" -- {}'.format(captcha_text, file_name))
