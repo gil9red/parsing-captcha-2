@@ -48,6 +48,6 @@ Process finished with exit code 0
 #### Мои репозитории с парсерами капчи:
 * https://github.com/gil9red/parser-phone-image
 * https://github.com/gil9red/parsing_captcha
-* https://github.com/gil9red/parsing_captcha-2
+* https://github.com/gil9red/parsing-captcha-2
 * https://github.com/gil9red/parsing-captcha-3
 * https://github.com/gil9red/hideme.ru-proxy-list
