@@ -44,3 +44,10 @@ Process finished with exit code 0
 [examples/8.png](examples/8.png) | ![examples/8.png](examples/8.png) | vSpRE
 [examples/9.png](examples/9.png) | ![examples/9.png](examples/9.png) | EJX9r
 [examples/10.png](examples/10.png) | ![examples/10.png](examples/10.png) | CtkB7
+
+#### Мои репозитории с парсерами капчи:
+* https://github.com/gil9red/parser-phone-image
+* https://github.com/gil9red/parsing_captcha
+* https://github.com/gil9red/parsing_captcha-2
+* https://github.com/gil9red/parsing-captcha-3
+* https://github.com/gil9red/hideme.ru-proxy-list
